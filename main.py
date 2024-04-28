@@ -163,9 +163,12 @@ async def transcode_message(message, interaction):
 		new_mp3 = io.BytesIO()
 		await client.loop.run_in_executor(None, functools.partial(x.export, new_mp3, format='mp3'))
 		
-		# Send results + truncate in case the transcript is longer than 4050 characters
+		# Add file to response
 		await msg.remove_attachments(message.attachments)
 		msg = await msg.add_files(discord.File(new_mp3, filename="voice_message.mp3"))
+
+		# clear old embed
+		await msg.edit(embed=None)
 	except Exception as error:
 		# handle the exception
 		traceback.print_exc()
