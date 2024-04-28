@@ -1,7 +1,7 @@
 # discord-voice-message-transcriber
 Discord.py bot that transcribes voice messages using OpenAI Whisper
 
-<img width="618" alt="Screenshot 2023-04-15 at 11 38 56 PM" src="https://user-images.githubusercontent.com/44641166/232242082-af33cc32-e479-4bf8-aef6-80e6f3453226.png">
+![image](https://github.com/random11x/discord-voice-message-transcriber/assets/137963515/71c92a83-86df-47ed-a4e8-d42e37996c3b)
 
 # Get Started
 
@@ -11,9 +11,25 @@ You can install the needed dependencies by doing `pip install -r requirements.tx
 
 You will also need a bot token (acquirable at the [Discord Developer Portal](https://discord.com/developers/applications)), which you will need to add to the `.env` file after `BOT_TOKEN=`. Make sure your bot has the Message Content intent, or it won't be able to read any voice messages.
 
+Your bot user will need these permissions depending on what functions you want it to do (279172992000):
+
+![image](https://github.com/random11x/discord-voice-message-transcriber/assets/137963515/d30c65f8-ec95-4315-9907-9a7520665b3f)
+
+`Trascribe Memo (Public)` and `Auto Trascribe` will need to be able to send messages and view the channel. `Transcribe Memo (Private)` and `Convert Memo To Mp3` need less permissions as they use direct replies that only the user can see.
+
 Finally, in the config.ini file, you can change some settings that alter how the bot works. You will need to add your User ID in the `admin > users` variable, just so you can control the bot via commands later. Alternately, you can also input a Role ID in `admin > role` to allow users with a specific role to control the bot, but this requires the Server Members intent.
 
-Once you have successfully started the bot, send "!synctree" in a channel the bot can see in order to get context menu functionality + slash commands working.
+Once you have successfully started the bot, send "!synctree" in a channel the bot can see in order to get context menu functionality + slash commands working. (This can sometimes take up to an hour for the commands to propogate through discords servers. If they aren't appearing also try to restart discord, that might help)
+
+The context menu commands will appear when rightclicking on a message
+
+![image](https://github.com/random11x/discord-voice-message-transcriber/assets/137963515/123db5f9-db50-4e9c-aff9-a471606fb4ca)
+
+Currently the slash commands are commented out. But if you want to turn them back on, they would appear when you use "/" in the text input field.
+
+![image](https://github.com/random11x/discord-voice-message-transcriber/assets/137963515/5d2c65c0-bc93-4379-b253-f48673db2348)
+
+(image doesn't show the commands because they are turned off. This image is only used to show you where to find them if you turn them back on)
 
 # Contribute & Other Stuff
 
