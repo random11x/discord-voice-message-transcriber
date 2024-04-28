@@ -27,9 +27,9 @@ The context menu commands will appear when rightclicking on a message
 
 Currently the slash commands are commented out. But if you want to turn them back on, they would appear when you use "/" in the text input field.
 
-![image](https://github.com/random11x/discord-voice-message-transcriber/assets/137963515/5d2c65c0-bc93-4379-b253-f48673db2348)
+![image](https://github.com/random11x/discord-voice-message-transcriber/assets/137963515/800b6f59-eae7-4aff-9318-9ad3af59d1c9)
 
-(image doesn't show the commands because they are turned off. This image is only used to show you where to find them if you turn them back on)
+(In order to get these to show up you would have to uncomment the commands in main.py and then run !synctree)
 
 # Contribute & Other Stuff
 
