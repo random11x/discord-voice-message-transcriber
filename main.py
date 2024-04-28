@@ -165,13 +165,7 @@ async def transcode_message(message, interaction):
 		
 		# Send results + truncate in case the transcript is longer than 4050 characters
 		await msg.remove_attachments(message.attachments)
-		msg = await msg.add_files(discord.File(new_mp3, filename="voice_message"))
-
-		safe_string = urllib.parse.quote_plus(msg.attachments[0].url)
-		
-		transcode_embed=discord.Embed(title=":arrow_forward: Play Mp3", url="https://embedmediaplayer.web.app/?url="+safe_string, color=color_done)
-		
-		await msg.edit(embed=transcode_embed)
+		msg = await msg.add_files(discord.File(new_mp3, filename="voice_message.mp3"))
 	except Exception as error:
 		# handle the exception
 		traceback.print_exc()
@@ -228,11 +222,11 @@ async def on_message(message):
 # @tree.command(name="synctree", description="Syncs the bot's command tree.")
 # async def synctree(interaction: discord.Interaction):
 # 	if not is_manager(interaction):
-# 		await interaction.response.send_message(content="You are not a Bot Manager!")
+# 		await interaction.response.send_message(content="You are not a Bot Manager!", ephemeral=True)
 # 		return
 
 # 	await tree.sync(guild=None)
-# 	await interaction.response.send_message(content="Sync received. Syncing can take up to an hour for discord servers to propagate the bot's commands.")
+# 	await interaction.response.send_message(content="Sync received. Syncing can take up to an hour for discord servers to propagate the bot's commands.", ephemeral=True)
 
 @tree.context_menu(name="Convert Memo To Mp3")
 async def transcode_contextmenu_private(interaction: discord.Interaction, message: discord.Message):
