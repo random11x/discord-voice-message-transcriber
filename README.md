@@ -11,7 +11,7 @@ You can install the needed dependencies by doing `pip install -r requirements.tx
 
 You will also need a bot token (acquirable at the [Discord Developer Portal](https://discord.com/developers/applications)), which you will need to add to the `.env` file after `BOT_TOKEN=`. Make sure your bot has the Message Content intent, or it won't be able to read any voice messages.
 
-Your bot user will need these permissions depending on what functions you want it to do (279172992000):
+Your bot user will need these permissions depending on what functions you want it to do (Permission Integer: `279172992000`):
 
 ![image](https://github.com/random11x/discord-voice-message-transcriber/assets/137963515/d30c65f8-ec95-4315-9907-9a7520665b3f)
 
