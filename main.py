@@ -118,8 +118,14 @@ async def transcribe_message(message, interaction=None, is_private=False):
 			if interaction is None or is_private:
 				await msg.edit(embed=discord.Embed(color=color_done,description=result))
 			else:
-				await interaction.delete_original_response()
-				msg = await message.reply(embed=discord.Embed(color=color_done,description=result), mention_author=False)
+				try:
+					newMsg = await message.reply(embed=discord.Embed(color=color_done,description=result), mention_author=False)
+					await interaction.delete_original_response()
+					msg = newMsg
+				except:
+					error_embed=discord.Embed(color=color_error, title="Transcription:", description=result)
+					error_embed.add_field(name="Error with reply:", value="```ansi\n[2;45m[0m[2;31mFailed to publicly reply with message. This bot may not have permission to post in the current channel.[0m```", inline=True)
+					await msg.edit(embed=error_embed)
 
 			previous_transcriptions[message.id] = {"id": msg.id, "url": msg.jump_url}
 
